@@ -68,7 +68,7 @@ rotation_error_arr_init = [] ; rotation_error_arr_after_pose = [] ;
 
 change_rot_x = [1 0 0] ; 
 
-for i=1:6
+for i=1:1
 tracklets = readLabels('../data_tracking_label_2/training/label_02',seq(i)) ;
 m = tracklets(frm(i)+1) ;
 p =  m{1,1} ;

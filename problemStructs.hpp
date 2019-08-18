@@ -214,7 +214,6 @@ public:
 		fscanfOrDie(fptr, "%d", &numPts_);
 		fscanfOrDie(fptr, "%d", &numObs_);
 
-		std::cout<<"hello\n" ; 
 		// Center of the car
 		carCenter_ = new double[3];
 		fscanfOrDie(fptr, "%lf", carCenter_+0);
@@ -226,7 +225,6 @@ public:
 		fscanfOrDie(fptr, "%lf", &w_);
 		fscanfOrDie(fptr, "%lf", &l_);
 		
-		std::cout<<"bub\n" ; 
 		// Camea intrinsics
 		K_ = new double[9*numViews_];
 		for(int i = 0; i < 9*numViews_; ++i){
@@ -247,7 +245,6 @@ public:
 			fscanfOrDie(fptr, "%lf", observationWeights_ + i);
 		}
 
-		std::cout<<"iisa me\n" ; 
 		// Mean locations
 		X_bar_ = new double[3*numObs_];
 		for(int i = 0; i < numObs_; ++i){
@@ -266,21 +263,18 @@ public:
 				fscanfOrDie(fptr, "%lf", V_ + i*3*numPts_ + 3*j + 2);
 			}
 		}
-		std::cout<<"nigga\n" ; 
 		// Read in the initial values for lambdas
 		lambdas_ = new double[5];
 		for(int i = 0; i < 5; ++i){
 			fscanfOrDie(fptr, "%lf", lambdas_ + i);
 		}
 		
-		std::cout<<"before rot \n" ; 
 		// Read in the rotation estimate (from PnP) (column-major ordered rotation matrix)
 		rot_ = new double[9];
 		for(int i = 0; i < 9; ++i){
 			fscanfOrDie(fptr, "%lf", rot_ + i);
 		}
 
-		std::cout<<"before trans\n" ; 
 		// Read in the translation estimate (from PnP)
 		trans_ = new double[3];
 		for(int i = 0; i < 3; ++i){
